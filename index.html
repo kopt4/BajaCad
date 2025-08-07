@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baja Cad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #111;
       color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
     }
 
     .container {
-      padding: 20px;
-      max-width: 1000px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      min-height: 100vh;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
-    img {
-      max-width: 100%;
+    .left, .right {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .left img {
+      width: 100%;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .right h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .right ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+    }
+
+    .right li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .right h1 {
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="images/promo.png" alt="Baja Cad Services">
+    <div class="left">
+      <img src="images/promo.png" alt="Baja Cad Promo Image" />
+    </div>
+    <div class="right">
+      <h1>Services</h1>
+      <ul>
+        <li>Crown Design – $50</li>
+        <li>Bridge Design (per unit) – $45</li>
+        <li>Implant Crown Design – $60</li>
+        <li>Night Guard Design – $70</li>
+        <li>Sleep Apnea Device Design – $100</li>
+        <li>Digital Denture Design – $90</li>
+        <li>Surgical Guide Design – $80</li>
+        <li>Model Design – $30</li>
+        <li>Temporary Crown Design – $35</li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
