@@ -18,22 +18,25 @@
     section {
       max-width: 700px;
       margin: 0 auto;
-      padding-top: 0.25em;
+      padding-top: 1em;
     }
 
-    img {
-      max-width: 300px;
-      margin-bottom: 2px;
+    img.logo {
+      max-width: 200px;
+      margin: 0;
+      padding: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h1 {
-      font-size: 2em;
-      margin-top: 0.1em;
-      margin-bottom: 0.1em;
+      font-size: 1.8em;
+      margin: 0.2em 0 0.1em 0;
     }
 
     h2 {
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: normal;
       margin: 0 0 1em 0;
     }
@@ -42,12 +45,24 @@
       list-style: none;
       padding: 0;
     }
+
+    ul li {
+      margin: 0.4em 0;
+    }
+
+    .contact-info {
+      margin-top: 1em;
+    }
+
+    img.qr {
+      max-width: 150px;
+      margin-top: 1em;
+    }
   </style>
 </head>
 <body>
   <section>
-    <img src="images/logo.png" alt="Baja Cad Logo" />
-    <br />
+    <img src="images/logo.png" alt="Baja Cad Logo" class="logo" />
     <h1>Baja Cad</h1>
     <h2>Precision CAD/CAM Design for Dental Professionals</h2>
 
@@ -64,12 +79,14 @@
       <li>Temporary Crown (Same Day Delivery) – $75</li>
     </ul>
 
-    <p>Email: <a href="mailto:bjcadent@gmail.com">bjcadent@gmail.com</a></p>
-    <p>Instagram: @bajacaddent</p>
-    <p>Facebook: Baja Cad</p>
-    <p>Twitter/X: @BajaCad</p>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:bjcadent@gmail.com">bjcadent@gmail.com</a></p>
+      <p>Instagram: @bajacaddent</p>
+      <p>Facebook: Baja Cad</p>
+      <p>Twitter/X: @BajaCad</p>
+    </div>
 
-    <img src="images/qr.png" alt="QR Code to Site" />
+    <img src="images/qr.png" alt="QR Code to Site" class="qr" />
   </section>
 </body>
 </html>
