@@ -4,28 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Baja Cad</title>
+
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    body {
+    :root {
+      --bg: #111;
+      --ink: #fff;
+      --muted: #1a1a1a;
+      --muted-border: #2a2a2a;
+      --accent: #4dd0e1; /* subtle teal that fits your theme */
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #111;
-      font-family: sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     .container {
       max-width: 1000px;
       width: 100%;
+      margin: 0 auto;
       padding: 20px;
-      box-sizing: border-box;
+      text-align: center;
     }
 
     .promo-image {
@@ -33,23 +39,43 @@
       height: auto;
       display: block;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
-    .social-links {
+    /* Icon row */
+    .social-row {
       margin-top: 20px;
-      font-size: 1.5em;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .social-links a {
-      color: #4dd0e1;
-      margin: 0 15px;
+    .icon-btn {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background: var(--muted);
+      border: 1px solid var(--muted-border);
+      color: var(--ink);           /* white icons */
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: transform .15s ease, box-shadow .15s ease, color .2s ease, border-color .2s ease;
     }
+    .icon-btn:hover {
+      transform: translateY(-1px);
+      color: var(--accent);        /* subtle teal on hover */
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+    .icon-btn:active { transform: translateY(0); }
 
-    .social-links a:hover {
-      color: #fff;
+    /* Make tap targets comfy on mobile */
+    @media (max-width: 480px) {
+      .icon-btn { width: 56px; height: 56px; border-radius: 14px; }
     }
   </style>
 </head>
@@ -57,10 +83,20 @@
   <div class="container">
     <img class="promo-image" src="images/promo.png" alt="Baja Cad Services">
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/bajacaddent/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61565799411747" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://x.com/BajaCad" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <!-- Icon links -->
+    <div class="social-row" aria-label="Social links">
+      <a class="icon-btn" href="mailto:bjcadent@gmail.com" aria-label="Email Baja Cad">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a class="icon-btn" href="https://www.instagram.com/bajacaddent/" target="_blank" rel="noopener" aria-label="Instagram @bajacaddent">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a class="icon-btn" href="https://www.facebook.com/profile.php?id=61565799411747" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a class="icon-btn" href="https://x.com/BajaCad" target="_blank" rel="noopener" aria-label="X (Twitter) @BajaCad">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
     </div>
   </div>
 </body>
